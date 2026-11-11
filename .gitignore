@@ -1,0 +1,38 @@
+# Secrets — never commit
+.env
+.env.local
+.env.*.local
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+dist/
+build/
+.venv/
+venv/
+.envrc
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Story workspaces under outputs/ are committed (artifacts + code).
+# Ignore caches inside story folders only.
+outputs/**/__pycache__/
+outputs/**/*.py[cod]
+outputs/**/.venv/
+outputs/**/.pytest_cache/
+outputs/**/*.egg-info/
+
+# Cursor / tooling
+.cursor/mcp.json
+*.log
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/

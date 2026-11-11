@@ -1,0 +1,14 @@
+---
+description: Formatting standards for SDLC stage Markdown outputs
+globs: outputs/**/*.md
+alwaysApply: false
+---
+
+# Stage artifact Markdown
+
+- Start with a `#` title that includes the story key when known.
+- Use clear `##` sections matching the stage’s required outline.
+- Prefer tables for findings, acceptance criteria, and traceability.
+- Mark inferences vs story facts explicitly.
+- Link sibling artifacts with relative paths when referencing prior stages.
+- Keep secrets out of artifact bodies.

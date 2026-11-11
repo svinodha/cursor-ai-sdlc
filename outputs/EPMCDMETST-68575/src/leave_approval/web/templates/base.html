@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{% block title %}Leave Approval Demo{% endblock %}</title>
+  <link rel="stylesheet" href="/static/app.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">Leave Approval Demo</div>
+    <nav>
+      <a href="/manager">Manager Dashboard</a>
+      <a href="/employee/history">Employee History</a>
+    </nav>
+    <p class="demo-banner">
+      Demo auth via <code>X-User-Id</code> / <code>X-Role</code> cookies set by this page —
+      <strong>not production-safe</strong>.
+    </p>
+  </header>
+  <main class="container">
+    {% block content %}{% endblock %}
+  </main>
+  <div id="toast" class="toast" hidden role="status" aria-live="polite"></div>
+  <script src="/static/app.js"></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

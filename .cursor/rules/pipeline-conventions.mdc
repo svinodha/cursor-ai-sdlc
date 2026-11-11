@@ -1,0 +1,15 @@
+---
+description: SDLC pipeline conventions for orchestrator and stage sub-agents
+alwaysApply: true
+---
+
+# SDLC pipeline conventions
+
+- Each Jira story gets a dedicated workspace folder: `outputs/<JIRA-KEY>/`.
+- **All** stage Markdown artifacts and **all** implemented application code must live inside that folder.
+- Do not modify the pipeline framework (`src/sdlc_pipeline/`, `agents/`, `.cursor/`) unless the story is explicitly about the pipeline itself.
+- Later stages consume prior work by **reading Markdown files** in the story folder (path handoff).
+- Respect `pipeline-state.json`: do not redo completed stages unless asked to restart or re-run from a stage.
+- One job per stage: do not jump ahead (e.g. no coding in design, no PR in verification).
+- Never commit, print, or embed secrets from `.env`.
+- Prefer focused diffs; avoid unrelated refactors.

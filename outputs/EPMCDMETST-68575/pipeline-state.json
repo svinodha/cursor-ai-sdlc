@@ -1,0 +1,109 @@
+{
+  "story_key": "EPMCDMETST-68575",
+  "status": "completed",
+  "agent_id": null,
+  "created_at": "2026-11-11T17:00:42+00:00",
+  "updated_at": "2026-11-11T17:17:33+00:00",
+  "last_error": null,
+  "stages": {
+    "requirement-analysis": {
+      "number": 1,
+      "agent_name": "requirement-analysis",
+      "title": "Requirement Analysis",
+      "output_file": "requirement-analysis.md",
+      "status": "completed",
+      "run_id": "task-95aa2160",
+      "started_at": "2026-11-11T17:00:42+00:00",
+      "completed_at": "2026-11-11T17:01:30+00:00",
+      "error": null
+    },
+    "architecture": {
+      "number": 2,
+      "agent_name": "architecture",
+      "title": "Architecture",
+      "output_file": "architecture.md",
+      "status": "completed",
+      "run_id": "task-151cfe1f",
+      "started_at": "2026-11-11T17:01:30+00:00",
+      "completed_at": "2026-11-11T17:02:33+00:00",
+      "error": null
+    },
+    "design": {
+      "number": 3,
+      "agent_name": "design",
+      "title": "Design",
+      "output_file": "design.md",
+      "status": "completed",
+      "run_id": "task-b76a8f8f",
+      "started_at": "2026-11-11T17:02:33+00:00",
+      "completed_at": "2026-11-11T17:03:59+00:00",
+      "error": null
+    },
+    "design-review": {
+      "number": 4,
+      "agent_name": "design-review",
+      "title": "Design Review",
+      "output_file": "design-review.md",
+      "status": "completed",
+      "run_id": "task-91ca910a",
+      "started_at": "2026-11-11T17:03:59+00:00",
+      "completed_at": "2026-11-11T17:05:14+00:00",
+      "error": null
+    },
+    "implementation-plan": {
+      "number": 5,
+      "agent_name": "implementation-plan",
+      "title": "Implementation Plan",
+      "output_file": "implementation-plan.md",
+      "status": "completed",
+      "run_id": "task-3af5fb27",
+      "started_at": "2026-11-11T17:05:14+00:00",
+      "completed_at": "2026-11-11T17:06:12+00:00",
+      "error": null
+    },
+    "implementation": {
+      "number": 6,
+      "agent_name": "implementation",
+      "title": "Implementation",
+      "output_file": "implementation.md",
+      "status": "completed",
+      "run_id": "backfill",
+      "started_at": "2026-11-11T17:06:12+00:00",
+      "completed_at": "2026-11-11T17:14:56+00:00",
+      "error": null
+    },
+    "code-review": {
+      "number": 7,
+      "agent_name": "code-review",
+      "title": "Code Review",
+      "output_file": "code-review.md",
+      "status": "completed",
+      "run_id": "task-b5feaddc",
+      "started_at": null,
+      "completed_at": "2026-11-11T17:14:56+00:00",
+      "error": null
+    },
+    "verification": {
+      "number": 8,
+      "agent_name": "verification",
+      "title": "Verification",
+      "output_file": "verification.md",
+      "status": "completed",
+      "run_id": "task-0890a436",
+      "started_at": "2026-11-11T17:14:56+00:00",
+      "completed_at": "2026-11-11T17:16:17+00:00",
+      "error": null
+    },
+    "pr-creation": {
+      "number": 9,
+      "agent_name": "pr-creation",
+      "title": "PR Creation",
+      "output_file": "pr-creation.md",
+      "status": "completed",
+      "run_id": "task-cda9018f",
+      "started_at": "2026-11-11T17:16:17+00:00",
+      "completed_at": "2026-11-11T17:17:33+00:00",
+      "error": null
+    }
+  }
+}

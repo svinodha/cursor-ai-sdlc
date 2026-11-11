@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block title %}Manager Dashboard — Leave Approval{% endblock %}
+{% block content %}
+<section>
+  <h1>Manager Dashboard</h1>
+  <p class="subtitle">Pending leave requests for manager <code>{{ actor_id }}</code></p>
+
+  {% if not rows %}
+  <p class="empty">No pending leave requests.</p>
+  {% else %}
+  <table class="data-table" id="pending-table">
+    <thead>
+      <tr>
+        <th>Employee</th>
+        <th>Type</th>
+        <th>Dates</th>
+        <th>Days</th>
+        <th>Status</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in rows %}
+      <tr data-request-id="{{ row.id|e }}">
+        <td>{{ row.employee_name|e }}</td>
+        <td>{{ row.leave_type|e }}</td>
+        <td>{{ row.start_date }} → {{ row.end_date }}</td>
+        <td>{{ row.duration_days }}</td>
+        <td>{{ status_badge(row.status.value)|safe }}</td>
+        <td>
+          <button
+            type="button"
+            class="btn btn-approve"
+            data-action="open-approve"
+            data-request-id="{{ row.id|e }}"
+          >Approve</button>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% endif %}
+</section>
+
+<dialog id="approve-dialog" class="approve-dialog">
+  <form method="dialog" id="approve-form">
+    <h2>Approve leave request</h2>
+    <p>Optionally add a comment for the employee. Comment is not required.</p>
+    <label for="approve-comment">Comment (optional)</label>
+    <textarea
+      id="approve-comment"
+      name="comment"
+      maxlength="500"
+      rows="4"
+      placeholder="Optional comment…"
+    ></textarea>
+    <p id="dialog-error" class="error" hidden></p>
+    <div class="dialog-actions">
+      <button type="button" class="btn btn-secondary" id="btn-cancel" value="cancel">Cancel</button>
+      <button type="submit" class="btn btn-primary" id="btn-confirm" value="confirm">Confirm</button>
+    </div>
+  </form>
+</dialog>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    LeaveApproval.initManagerDashboard({
+      userId: {{ actor_id|tojson }},
+      role: "manager"
+    });
+  });
+</script>
+{% endblock %}

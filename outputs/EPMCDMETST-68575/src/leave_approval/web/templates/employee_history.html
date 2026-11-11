@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Employee Leave History{% endblock %}
+{% block content %}
+<section>
+  <h1>Leave History</h1>
+  <p class="subtitle">History for employee <code>{{ actor_id }}</code></p>
+
+  {% if not rows %}
+  <p class="empty">No leave history.</p>
+  {% else %}
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Dates</th>
+        <th>Days</th>
+        <th>Status</th>
+        <th>Manager comment</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in rows %}
+      <tr>
+        <td>{{ row.leave_type|e }}</td>
+        <td>{{ row.start_date }} → {{ row.end_date }}</td>
+        <td>{{ row.duration_days }}</td>
+        <td>{{ status_badge(row.status.value)|safe }}</td>
+        <td>{{ format_comment(row.manager_comment)|safe }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% endif %}
+</section>
+{% endblock %}
